@@ -1,0 +1,6 @@
+@import url("../../../00-assets/css/00-settings/colors-base.css");
+.footerMain{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: var(--c-main--20);
+}

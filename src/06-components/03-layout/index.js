@@ -4,6 +4,7 @@ import React from 'react';
 import '../../00-assets/css/index.css';
 
 import HeaderMain from '../02-organisms/header-main/index';
+import FooterMain from '../02-organisms/footer-main/footer-main';
 import Switcher from './switcher';
 
 export default () => (
@@ -12,5 +13,6 @@ export default () => (
     <main>
       <Switcher />
     </main>
+    <FooterMain />
   </div>
 );
