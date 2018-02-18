@@ -1,0 +1,41 @@
+.headerMain {
+  float:left;
+  width: 100%;
+  height: 90px;
+  flex: 0 0 auto;
+}
+.container{
+  height: 100%;
+}
+.inner{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.headerMain a{
+  display: block;
+  color: rgb(35, 40, 42);
+  margin: 6px 0;
+  padding: 10px;
+  font-size: 0.875rem;
+  line-height: 8px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: color 0.3s;
+}
+
+.headerMain .active {
+  color: red;
+}
+.headerMain a:hover, .headerMain span:hover {
+  color: rgb(132, 112, 89);
+}
+.headerMain .active a:hover, .headerMain .span span:hover {
+  color: rgb(254, 209, 158);
+}
+
+.headerMain .active:hover {
+  color: rgb(224, 179, 128);
+}

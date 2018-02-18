@@ -1,0 +1,13 @@
+/*
+ File for gathering css files from sub folders.
+ File order is important. Structure is bases on ITCSS methodology,
+ where selectors are ordered based on their specificity, with less
+ specific styles coming first.
+ https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+ These styles come before component styles.
+*/
+@import url("00-settings/colors-base.css");
+@import url("01-generic/bootstrap-reboot.css");
+@import url("02-base/additional-reset.css");
+@import url("02-base/page.css");
+@import url("04-objects/grid.css");

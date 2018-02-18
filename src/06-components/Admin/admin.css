@@ -1,0 +1,28 @@
+.admin {
+  text-align: center;
+  padding-top: calc((100vh - 380px)/2);
+}
+
+.admin:before {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  content: 'ADMIN PANEL';
+  font-size: 32px;
+  color: rgb(70,70,70);
+  text-shadow: 1px 1px 1px #000;
+  text-align: center;
+}
+
+.admin:after {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  content: '🎖 CONGRATS: LEVEL 2 UNLOCKED!';
+  font-size: 26px;
+  color: rgb(86, 160, 214);
+  text-shadow: 1px 1px 1px #000;
+  text-align: center;
+}

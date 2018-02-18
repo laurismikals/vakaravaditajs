@@ -1,0 +1,62 @@
+/*Color settings*/
+:root {
+  /*Main color*/
+  --c-main: #444444;
+  --c-main--80: rgba(68, 68, 68, 0.8);
+  --c-main--50: rgba(68, 68, 68, 0.5);
+  --c-main--40: rgba(68, 68, 68, 0.4);
+  --c-main--20: rgba(68, 68, 68, 0.2);
+  --c-main--10: rgba(68, 68, 68, 0.1);
+  --c-main--5: rgba(68, 68, 68, 0.05);
+
+  /*Background colors*/
+  --c-background: #ffffff;
+  --c-background-gray: #575757;
+
+  /*Border colors*/
+  --c-border: #cccccc;
+  --c-border-hover: #a0a0a0;
+  --c-border-focus: #0066cc;
+
+  /*Text colors*/
+  --c-text-dark: #444444;
+  --c-text-medium: #6B6B6B;
+  --c-text-light: #ffffff;
+  --c-text-light--70: rgba(255, 255, 255, 0.7);
+  --c-text-highlight: #0055a9;
+
+  /*Link colors*/
+  --c-link: #ffe048;
+  --c-link-hover: #ffe048;
+
+  /*Input colors*/
+  --c-input-placeholder: #a0a0a0;
+  --c-input-text: #202020;
+  --c-input-label: #404040;
+
+  /*Checkbox colors*/
+  --c-checkbox-disabled: #bbbbbb;
+
+  /*Colors by function*/
+  --c-positive: #6abe28;
+  --c-negative: #d32f2f;
+  --c-average: #ff9c00;
+  --c-sunny: #ffcd00;
+  --c-premium: #0066cc;
+  --c-white: #ffffff;
+  --c-white--70: rgba(255, 255, 255, 0.7);
+
+  /*Table colors*/
+  --c-table-row-even: #ffffff;
+  --c-table-row-odd: rgba(68, 68, 68, 0.05);
+  --c-table-row-hover: rgba(68, 68, 68, 0.2);
+
+  /*Box shadow colors*/
+  --c-box-shadow: #000000;
+
+  /*Overlay colors*/
+  --c-overlay: rgba(64, 64, 64, 0.8);
+
+  /*Divider colors*/
+  --c-divider: #e0e0e0;
+}

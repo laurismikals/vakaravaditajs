@@ -1,0 +1,7 @@
+.login {
+  text-align: center;
+  padding-top: calc((100vh - 380px)/2);
+  color: red !important;
+  font-size: 26px;
+  text-shadow: 1px 1px 1px #000;
+}

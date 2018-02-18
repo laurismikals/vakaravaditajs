@@ -1,0 +1,53 @@
+.switcher {
+  float:left;
+  width: 100%;
+  min-height: 300px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/** NEXT TRANSITION **/
+:global(.next) :global(.fade-enter) {
+  transform: translateX(100%); 
+  opacity: 0; 
+}
+
+:global(.next) :global(.fade-enter-active) {
+  transform: translateX(0%); 
+  opacity: 1;
+  transition: all 500ms;
+}
+
+:global(.next) :global(.fade-leave) {
+  transform: translateX(0%); 
+  opacity: 1; 
+}
+
+:global(.next) :global(.fade-leave-active) {
+  transform: translateX(-100%); 
+  opacity: 0; 
+  transition: all 500ms;
+}
+
+/** BACK TRANSITION **/
+:global(.back) :global(.fade-enter) {
+  transform: translateX(-100%); 
+  opacity: 0; 
+}
+
+:global(.back) :global(.fade-enter-active) {
+  transform: translateX(0%); 
+  opacity: 1; 
+  transition: all 500ms;
+}
+
+:global(.back) :global(.fade-leave) {
+  transform: translateX(0%); 
+  opacity: 1; 
+}
+
+:global(.back) :global(.fade-leave-active) {
+  transform: translateX(100%); 
+  opacity: 0; 
+  transition: all 500ms;
+}
