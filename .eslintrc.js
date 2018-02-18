@@ -19,7 +19,18 @@ module.exports = {
         specialLink: ['to']
       }
     ],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }]
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'max-len': [
+      'error',
+      {
+        code: 100,
+        ignoreUrls: true,
+        ignoreComments: true,
+        ignoreRegExpLiterals: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true
+      }
+    ],
   },
   globals: {
     window: true,
@@ -37,7 +48,7 @@ module.exports = {
     fetch: true,
     alert: true
   }
-}
+};
 
 // module.exports = {
 //   parser: 'babel-eslint',
