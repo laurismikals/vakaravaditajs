@@ -1,7 +1,7 @@
 @import url("../../../00-assets/css/00-settings/colors-base.css");
 :root {
   --height-small: 100vh;
-  --height-large: 80vh;
+  --height-large: 90vh;
 }
 .head{
   float: left;
@@ -53,15 +53,42 @@
   text-shadow: 2px 2px 8px var(--c-main--10);
 }
 .profession{
-  font-size: 1.5em;
+  font-size: 1em;
   line-height: 1.3;
 }
+@media only screen and (min-width: 1025px){
+  .profession{
+    font-size: 1.5em;
+  }
+}
 .name{
-  font-size: 7vw;
+  font-size: 2em;
   line-height: 1;
 }
+@media only screen and (min-width: 441px){
+  .name{
+    font-size: 3em;
+  }
+}
+@media only screen and (min-width: 561px){
+  .name{
+    font-size: 7vw;
+  }
+}
 .surname{
-  font-size: 7vw;
-  margin-left: 5vw;
+  font-size: 2em;
+  margin-left: 1em;
   line-height: 1;
+}
+@media only screen and (min-width: 441px){
+  .surname{
+    font-size: 3em;
+    margin-left: 1.5em;
+  }
+}
+@media only screen and (min-width: 561px){
+  .surname{
+    font-size: 7vw;
+    margin-left: 5vw;
+  }
 }

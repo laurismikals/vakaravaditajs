@@ -41,14 +41,14 @@ const HeaderMain = ({ path }) => {
             activeClassName={styles.active}
             to={{ type: 'LIST', payload: { category: 'fp' } }}
           >
-            FP
+            &nbsp;
           </NavLink>
 
           <NavLink
             activeClassName={styles.active}
             to={{ type: 'ADMIN' }}
           >
-            ADMIN
+            &nbsp;
           </NavLink>
         </div>
       </div>
