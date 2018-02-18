@@ -6,7 +6,7 @@ import headingStyles from '../../00-atoms/heading/heading.css';
 import textStyles from '../../00-atoms/text/text.css';
 import styles from './about.css';
 
-const TEXT = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores at corporis dolorem esse excepturi iure minima praesentium repellat veritatis, voluptas! Animi corporis deleniti ea enim ex iusto nesciunt nobis possimus recusandae vel. Accusamus consequatur deserunt enim esse libero, maiores nam, nostrum quaerat quam quas, quisquam sit tempora totam voluptatem voluptatibus.';
+const TEXT = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eos eum ex ipsa nostrum possimus repudiandae, totam veniam veritatis! A ad adipisci aliquam amet, aperiam aspernatur commodi culpa delectus dignissimos dolorum ea eos eum facilis hic impedit inventore ipsam iste laborum minima mollitia nam nihil, nobis omnis optio pariatur perspiciatis quae qui quos repudiandae rerum saepe sint, sit soluta unde veniam vero vitae. Asperiores corporis omnis provident quo repellendus veritatis!';
 
 export default () => (
   <section className={styles.about}>
