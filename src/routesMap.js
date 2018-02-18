@@ -4,24 +4,24 @@ import { fetchData } from './03-utilities/utils';
 export default {
   HOME: {
     path: '/',
-    thunk: async (dispatch) => {
-      const fetchPosts = fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(response => response.json())
-        .then((response) => {
-          dispatch({
-            type: 'POSTS_RECEIVED',
-            payload: response,
-          });
-        });
-      const fetchComments = fetch('https://jsonplaceholder.typicode.com/comments')
-        .then(response => response.json())
-        .then((response) => {
-          dispatch({
-            type: 'COMMENTS_RECEIVED',
-            payload: response,
-          });
-        });
-      await Promise.all([fetchPosts, fetchComments]);
+    thunk: async () => {
+      // const fetchPosts = fetch('https://jsonplaceholder.typicode.com/posts')
+      //   .then(response => response.json())
+      //   .then((response) => {
+      //     dispatch({
+      //       type: 'POSTS_RECEIVED',
+      //       payload: response,
+      //     });
+      //   });
+      // const fetchComments = fetch('https://jsonplaceholder.typicode.com/comments')
+      //   .then(response => response.json())
+      //   .then((response) => {
+      //     dispatch({
+      //       type: 'COMMENTS_RECEIVED',
+      //       payload: response,
+      //     });
+      //   });
+      // await Promise.all([fetchPosts, fetchComments]);
     },
   },
   LIST: {

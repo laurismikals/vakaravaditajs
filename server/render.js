@@ -43,7 +43,7 @@ export default ({ clientStats }) => async (req, res) => {
         
         <!--link to the most important font which gets requested as soon as possible.
         this decreases possibility of flash of unstyled text.-->
-        <!--<link rel="preload" href="link goes here" as="font" type="font/woff2" crossorigin>-->
+        <link rel="preload" href="/fonts/subset-Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
         
         <!--This service loads only the polyfills the browser needs-->
         <script src="//cdn.polyfill.io/v2/polyfill.min.js"></script>

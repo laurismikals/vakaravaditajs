@@ -6,7 +6,7 @@ span.directions {
 .articleLinks {
   color: white;
   -webkit-font-smoothing: antialiased;
-  font-family: Roboto, sans-serif;
+  font-family: Roboto;
   text-decoration: none;
 }
 

@@ -16,6 +16,7 @@ const outputPath = clientConfig.output.path;
 const app = express();
 
 app.use(compression());
+app.use(express.static('public'));
 
 // JWTOKEN COOKIE - in a real app obviously you set this after signup/login:
 app.use(cookieParser());
