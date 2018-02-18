@@ -63,3 +63,5 @@ typings/
 # distribution folders
 buildClient
 buildServer
+
+/public/images
