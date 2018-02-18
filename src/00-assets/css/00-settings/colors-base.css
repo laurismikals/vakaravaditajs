@@ -1,7 +1,7 @@
 /*Color settings*/
 :root {
   /*Main color*/
-  --c-main: #444444;
+  --c-main: rgba(68, 68, 68, 1);
   --c-main--80: rgba(68, 68, 68, 0.8);
   --c-main--50: rgba(68, 68, 68, 0.5);
   --c-main--40: rgba(68, 68, 68, 0.4);
@@ -44,7 +44,10 @@
   --c-sunny: #ffcd00;
   --c-premium: #0066cc;
   --c-white: #ffffff;
+  --c-white--80: rgba(255, 255, 255, 0.8);
   --c-white--70: rgba(255, 255, 255, 0.7);
+  --c-white--50: rgba(255, 255, 255, 0.5);
+  --c-white--40: rgba(255, 255, 255, 0.4);
 
   /*Table colors*/
   --c-table-row-even: #ffffff;

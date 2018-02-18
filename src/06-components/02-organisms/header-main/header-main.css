@@ -1,3 +1,4 @@
+@import url("../../../00-assets/css/00-settings/colors-base.css");
 .headerMain {
   float:left;
   width: 100%;
@@ -14,13 +15,14 @@
 .inner{
   height: 100%;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
 }
 .headerMain a{
   display: block;
-  color: rgb(35, 40, 42);
-  margin: 6px 0;
-  padding: 10px;
+  color: var(--c-white);
+  text-shadow: 2px 2px 8px var(--c-main--10);
+  margin: 6px 10px;
   font-size: 1em;
   line-height: 1.3;
   text-align: center;
@@ -31,15 +33,18 @@
 }
 
 .headerMain .active {
-  color: red;
+  border-style: solid;
+  border-color: currentColor;
+  border-width: 0;
+  border-bottom-width: 2px;
 }
 .headerMain a:hover, .headerMain span:hover {
-  color: rgb(132, 112, 89);
+  color: var(--c-white--80);
 }
 .headerMain .active a:hover, .headerMain .span span:hover {
-  color: rgb(254, 209, 158);
+  color: var(--c-white--50);
 }
 
 .headerMain .active:hover {
-  color: rgb(224, 179, 128);
+  color: var(--c-white--40);
 }

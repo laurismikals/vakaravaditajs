@@ -12,6 +12,15 @@ export default () => (
       cover
       className={styles.image}
     />
+    <div className={styles.textWrap}>
+      <div className="container">
+        <p className={styles.text}>
+          <span className={styles.profession}>Vakara vadītājs</span><br />
+          <span className={styles.name}>Raivis</span><br />
+          <span className={styles.surname}>Bružis</span>
+        </p>
+      </div>
+    </div>
   </div>
 );
 

@@ -7,8 +7,6 @@ import styles from './header-main.css';
 
 const HeaderMain = ({ path }) => {
   const isHome = path === '/';
-
-
   return (
     <header className={`
         ${styles.headerMain}
@@ -29,14 +27,14 @@ const HeaderMain = ({ path }) => {
             activeClassName={styles.active}
             to="/list/db-graphql"
           >
-            DB & GRAPHQL
+            Galerija
           </NavLink>
 
           <NavLink
             activeClassName={styles.active}
             to={['list', 'react-redux']}
           >
-            REACT & REDUX
+            Raksti
           </NavLink>
 
           <NavLink
