@@ -65,3 +65,4 @@ buildClient
 buildServer
 
 /public/images
+/public/dist
