@@ -7,17 +7,17 @@ import styles from './testimonials.css';
 
 const testimonialArr = [
   {
-    image: '/images/ruta.jpg',
+    image: '/images/ruta',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aliquam atque beatae consequatur cum doloribus esse illum in itaque, iure omnis optio porro quaerat qui quia quo quos ratione sed sequi sint sit soluta totam ullam velit voluptatem voluptatibus?',
     name: 'Rūta',
   },
   {
-    image: '/images/lauris.jpg',
+    image: '/images/lauris',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, voluptatum? Lorem ipsum delectus deleniti dignissimos dolores et ex exercitationem explicabo fugit inventore ipsa ipsum iste magnam maxime minima natus nemo nulla odit optio possimus quaerat repellendus, sunt ullam! Beatae delectus ipsam numquam.',
     name: 'Lauris',
   },
   {
-    image: '/images/anda.jpg',
+    image: '/images/anda',
     text: 'Aspernatur, voluptatum? Lorem ipsum delectus deleniti dignissimos dolores et ex exercitationem explicabo fugit inventore ipsa ipsum iste magnam maxime minima natus nemo nulla odit optio possimus quaerat repellendus, sunt ullam! Beatae delectus ipsam numquam.',
     name: 'Anda',
   },

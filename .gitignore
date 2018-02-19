@@ -64,5 +64,5 @@ typings/
 buildClient
 buildServer
 
-/public/images
-/public/dist
+public/images
+public/dist

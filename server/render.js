@@ -27,7 +27,7 @@ export default ({ clientStats }) => async (req, res) => {
   console.log('CHUNK NAMES', chunkNames); // eslint-disable-line no-console
 
   return res.send(`<!doctype html>
-    <html>
+    <html lang="lv">
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">

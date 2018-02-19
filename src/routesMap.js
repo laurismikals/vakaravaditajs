@@ -24,6 +24,18 @@ export default {
       // await Promise.all([fetchPosts, fetchComments]);
     },
   },
+  GALLERY: {
+    path: '/gallery',
+    thunk: async () => {
+
+    },
+  },
+  ARTICLES: {
+    path: '/articles',
+    thunk: async () => {
+
+    },
+  },
   LIST: {
     path: '/list/:category',
     thunk: async (dispatch, getState) => {

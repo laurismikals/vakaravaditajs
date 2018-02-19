@@ -46,11 +46,11 @@ export default class Image extends Component {
         <LazyLoad
           offsetVertical={500}
         >
-          <img
-            src={src}
-            alt={alt}
-            onLoad={() => this.loadHandler()}
-          />
+          <picture>
+            <source srcSet={`${src}.webp`} type="image/webp" />
+            <source srcSet={`${src}.jpg`} type="image/jpeg" />
+            <img src={`${src}.jpg`} alt={alt} onLoad={() => this.loadHandler()} />
+          </picture>
         </LazyLoad>
         <span className={styles.imageLoadingAnimation} />
       </figure>

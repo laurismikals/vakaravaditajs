@@ -12,6 +12,7 @@ export default () => (
           href="https://www.facebook.com/raivis.bruzis"
           target="_blank"
           rel="noopener noreferrer"
+          title="Facebook"
           className={styles.link}
         >
           <Icon
