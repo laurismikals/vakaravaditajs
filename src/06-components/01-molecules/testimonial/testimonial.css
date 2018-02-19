@@ -23,6 +23,8 @@
   margin-bottom: 20px;
 }
 .text{
+  float:left;
+  width: 100%;
   text-align: center;
   margin-bottom: 20px;
 }
