@@ -18,7 +18,10 @@
     "clean": "rimraf buildClient buildServer",
     "cm": "git-cz",
     "lint": "eslint --fix src server webpack",
-    "format": "prettier --single-quote --semi=false --write '{src,server,webpack}/**/*.js' && npm run lint"
+    "format": "prettier --single-quote --semi=false --write '{src,server,webpack}/**/*.js' && npm run lint",
+    "svgMinifyIcons": "mkdirp public/dist/icons-min && svgo -f src/00-assets/icons -o public/dist/icons-min",
+    "svgMakeSprite": "spritesh --input public/dist/icons-min --output public/dist/icons-sprite.svg && rimraf public/dist/icons-min",
+    "svg": "npm run svgMinifyIcons && npm run svgMakeSprite"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -42,6 +45,9 @@
     "redux-first-router-link": "^1.1.4",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
+    "spritesh": "^1.2.0",
+    "svg4everybody": "^2.1.9",
+    "svgo": "^1.0.4",
     "transition-group": "^0.0.2",
     "webpack-flush-chunks": "^1.1.22"
   },
@@ -73,6 +79,7 @@
     "husky": "^0.14.3",
     "jest": "^21.2.1",
     "lint-staged": "^4.2.3",
+    "mkdirp": "^0.5.1",
     "postcss-cssnext": "^3.1.0",
     "postcss-for": "^2.1.1",
     "postcss-import": "^11.0.0",
