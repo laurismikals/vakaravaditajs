@@ -7,7 +7,7 @@ import styles from './head.css';
 export default () => (
   <section className={styles.head}>
     <Image
-      src="/images/head"
+      src="/images/raivis"
       alt="Vakara vadītājs Raivis Bružis"
       cover
       className={styles.image}
