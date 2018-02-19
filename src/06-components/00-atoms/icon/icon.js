@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import svg4everybody from 'svg4everybody';
+import svg4everybody from 'svg4everybody';
 
 import styles from './icon.css';
+
+if (typeof window !== 'undefined') {
+  svg4everybody();
+}
 
 const Icon = ({ className = '', icon }) => (
   <svg className={`${styles.icon} ${className}`}>
