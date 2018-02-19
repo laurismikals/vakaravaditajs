@@ -22,7 +22,7 @@
     "svgMinifyIcons": "mkdirp public/dist/icons-min && svgo -f src/00-assets/icons -o public/dist/icons-min",
     "svgMakeSprite": "spritesh --input public/dist/icons-min --output public/dist/icons-sprite.svg && rimraf public/dist/icons-min",
     "svg": "npm run svgMinifyIcons && npm run svgMakeSprite",
-    "webp": "node webp.js"
+    "images": "node optimize-images.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -34,6 +34,7 @@
     "fetch-everywhere": "^1.0.5",
     "history": "^4.6.3",
     "imagemin": "^5.3.1",
+    "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-webp": "^4.1.0",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
