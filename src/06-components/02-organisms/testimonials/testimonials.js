@@ -26,7 +26,7 @@ const testimonialArr = [
 export default () => (
   <section className={styles.testimonials}>
     <div className="container">
-      <div className="row row--gutters-20">
+      <div className="row row--gutters-20 justify--center">
         {map(testimonialArr, ({ image, text, name }, i) => (
           <div key={i} className="col-s1-24 col-s4-12 col-s7-8 flex direction--column">
             <Testimonial

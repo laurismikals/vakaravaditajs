@@ -1,0 +1,14 @@
+@import url("../../../00-assets/css/00-settings/colors-base.css");
+.contact{
+  float:left;
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: var(--c-main--10);
+  text-align: center;
+}
+.phone{
+  color: var(--c-main);
+  font-weight: 300;
+  font-size: 1.8em;
+}

@@ -1,10 +1,21 @@
-.navSocial{
-
-}
+@import url("../../../00-assets/css/00-settings/colors-base.css");
+.navSocial{}
 .list{
   list-style: none;
   display: flex;
   align-items: center;
 }
 .item{}
-.link{}
+.link{
+  color: var(--c-main);
+  transition: color 0.3s;
+  font-size: 1.3em;
+}
+.link:hover,
+.link:focus {
+  color: var(--c-main--50);
+}
+.link:active {
+  color: var(--c-main--80);
+}
+

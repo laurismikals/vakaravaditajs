@@ -1,3 +1,4 @@
+@import url("../../../00-assets/css/00-settings/colors-base.css");
 .text {
   line-height: 1.5;
 }
@@ -9,11 +10,11 @@
 }
 .text ul li {
   position: relative;
-  padding: 0 0 0 40px;
+  padding: 0 0 0 35px;
   font-size: 1em;
   font-weight: 500;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .text ul li:before {
   content: "";
@@ -23,7 +24,7 @@
   background-color: var(--c-main--40);
   border-radius: 50%;
   position: absolute;
-  top: 0.500em;
+  top: 0.400em;
   left: 0;
 }
 .text ol {

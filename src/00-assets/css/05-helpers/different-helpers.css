@@ -41,7 +41,7 @@
 .relative {
   position: relative;
 }
-.text-align--center {
+:global(.text-align--center) {
   text-align: center !important;
 }
 .text-align--left {

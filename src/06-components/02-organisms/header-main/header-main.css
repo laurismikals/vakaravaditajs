@@ -38,13 +38,10 @@
   border-width: 0;
   border-bottom-width: 2px;
 }
-.headerMain a:hover, .headerMain span:hover {
-  color: var(--c-white--80);
-}
-.headerMain .active a:hover, .headerMain .span span:hover {
+.headerMain a:hover,
+.headerMain a:focus {
   color: var(--c-white--50);
 }
-
-.headerMain .active:hover {
-  color: var(--c-white--40);
+.headerMain a:active {
+  color: var(--c-white--80);
 }
