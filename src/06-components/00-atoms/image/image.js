@@ -39,7 +39,7 @@ export default class Image extends Component {
           ${styles.image}
           ${x && y ? styles.imageAspect : ''}
           ${this.state.loaded ? styles.imageLoaded : styles.imageLoading}
-          ${cover ? styles.imageCover : ''}
+          ${cover ? 'image--cover' : ''}
         `}
         style={(x && y) && { padding: `0 0 ${(y * 100) / x}% 0` }}
       >

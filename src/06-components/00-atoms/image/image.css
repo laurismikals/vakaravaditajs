@@ -61,13 +61,13 @@
   width: calc(100% + 2px);
   height: calc(100% + 2px);
 }
-.imageCover img {
+:global(.image--cover img) {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.no-objectfit .imageCover img,
-.no-object-fit .imageCover img {
+:global(.no-objectfit .image--cover img),
+:global(.no-object-fit .image--cover img) {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -78,7 +78,7 @@
   transform: translateX(-50%) translateY(-50%);
   object-fit: cover;
 }
-.no-objectfit.no-csstransforms .imageCover img {
+:global(.no-objectfit.no-csstransforms .image--cover img) {
   top: 0;
   left: 0;
 }
