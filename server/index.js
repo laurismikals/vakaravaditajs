@@ -6,9 +6,11 @@ import webpack from 'webpack'; // eslint-disable-line import/no-extraneous-depen
 import webpackDevMiddleware from 'webpack-dev-middleware'; // eslint-disable-line import/no-extraneous-dependencies
 import webpackHotMiddleware from 'webpack-hot-middleware'; // eslint-disable-line import/no-extraneous-dependencies
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware'; // eslint-disable-line import/no-extraneous-dependencies
+
 import clientConfig from '../webpack/client.dev';
 import serverConfig from '../webpack/server.dev';
 import { findVideos, findVideo } from './api';
+import db from './mysql/mysql';
 
 const DEV = process.env.NODE_ENV === 'development';
 const { publicPath } = clientConfig.output;
@@ -34,6 +36,41 @@ app.use((req, res, next) => {
 });
 
 // API
+
+app.get('/abouttable', (req, res) => {
+  const sql = 'CREATE TABLE about(title VARCHAR(255), text TEXT)';
+  db.query(sql, (error, result) => {
+    if(error) throw error;
+    console.log(result);
+    res.send('About table created...');
+  });
+});
+
+app.get('/api/update/about', (req, res) => {
+  const about = {
+    title: 'Par mani2',
+    text: '2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque eos eum ex ipsa nostrum possimus repudiandae, totam veniam veritatis! A ad adipisci aliquam amet, aperiam aspernatur commodi culpa delectus dignissimos dolorum ea eos eum facilis hic impedit inventore ipsam iste laborum minima mollitia nam nihil, nobis omnis optio pariatur perspiciatis quae qui quos repudiandae rerum saepe sint, sit soluta unde veniam vero vitae. Asperiores corporis omnis provident quo repellendus veritatis!',
+  };
+
+  const sql = `UPDATE about SET
+    title = '${about.title}',
+    text = '${about.text}'
+    WHERE id = 1`;
+  db.query(sql, (error, result) => {
+    if(error) throw error;
+    console.log(result);
+    res.send('About changed');
+  });
+});
+
+app.get('/api/get/about', (req, res) => {
+  const sql = 'SELECT * FROM about';
+  db.query(sql, (error, result) => {
+    if(error) throw error;
+    console.log(result);
+    res.json(result[0]);
+  });
+});
 
 app.get('/api/videos/:category', async (req, res) => {
   const jwToken = req.headers.authorization.split(' ')[1];
