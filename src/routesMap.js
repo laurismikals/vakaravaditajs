@@ -4,24 +4,18 @@ import { fetchData } from './03-utilities/utils';
 export default {
   HOME: {
     path: '/',
-    thunk: async () => {
-      // const fetchPosts = fetch('https://jsonplaceholder.typicode.com/posts')
-      //   .then(response => response.json())
-      //   .then((response) => {
-      //     dispatch({
-      //       type: 'POSTS_RECEIVED',
-      //       payload: response,
-      //     });
-      //   });
-      // const fetchComments = fetch('https://jsonplaceholder.typicode.com/comments')
-      //   .then(response => response.json())
-      //   .then((response) => {
-      //     dispatch({
-      //       type: 'COMMENTS_RECEIVED',
-      //       payload: response,
-      //     });
-      //   });
-      // await Promise.all([fetchPosts, fetchComments]);
+    thunk: async (dispatch) => {
+      const fetchAbout = fetch('http://localhost:3000/api/get/about')
+        .then(response => response.json())
+        .then((response) => {
+          console.log('response', response);
+          dispatch({
+            type: 'ABOUT_RECEIVED',
+            payload: response,
+          });
+        });
+
+      await Promise.all([fetchAbout]);
     },
   },
   GALLERY: {
