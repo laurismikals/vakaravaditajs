@@ -66,3 +66,6 @@ buildServer
 
 public/images
 public/dist
+
+# Config
+config/database.js
