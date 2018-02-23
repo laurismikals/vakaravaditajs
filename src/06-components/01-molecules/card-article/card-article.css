@@ -1,0 +1,38 @@
+.cardArticle{
+  float:left;
+  clear:left;
+  width: 100%;
+}
+@media only screen and (min-width: 481px){
+  .cardArticle{
+    display: flex;
+  }
+}
+.image{
+  float:left;
+  width: 100%;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 481px){
+  .image{
+    width: 100px;
+    flex: 0 0 100px;
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 561px){
+  .image{
+    width: 200px;
+    flex: 0 0 200px;
+  }
+}
+.left{
+  flex: 1 1 auto;
+}
+.heading{
+  float:left;
+  width: 100%;
+  font-size: 1.250em;
+  line-height: 1.3;
+}
