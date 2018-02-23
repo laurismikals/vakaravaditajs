@@ -1,7 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { NavLink } from 'redux-first-router-link';
-import { goToPage } from '../../../04-actions/index';
 
 import styles from './header-main.css';
 
@@ -33,7 +31,4 @@ const HeaderMain = () => (
   </header>
 );
 
-const mapDispatch = { onClick: goToPage };
-const mapState = ({ location }) => ({ path: location.pathname });
-
-export default connect(mapState, mapDispatch)(HeaderMain);
+export default HeaderMain;
