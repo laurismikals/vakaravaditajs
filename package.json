@@ -22,9 +22,11 @@
     "svgMinifyIcons": "mkdirp public/dist/icons-min && svgo -f src/00-assets/icons -o public/dist/icons-min",
     "svgMakeSprite": "spritesh --input public/dist/icons-min --output public/dist/icons-sprite.svg && rimraf public/dist/icons-min",
     "svg": "npm run svgMinifyIcons && npm run svgMakeSprite",
-    "images": "node optimize-images.js"
+    "images": "node optimize-images.js",
+    "sw": "workbox generate:sw"
   },
   "dependencies": {
+    "babel-plugin-lodash": "^3.3.2",
     "babel-polyfill": "^6.23.0",
     "bootstrap": "4.0.0-alpha.6",
     "compression": "^1.7.1",
@@ -36,8 +38,10 @@
     "imagemin": "^5.3.1",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-webp": "^4.1.0",
+    "jsonwebtoken": "^8.1.1",
     "lodash": "^4.17.4",
     "mysql": "^2.15.0",
+    "node-env-file": "^0.1.8",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -54,7 +58,8 @@
     "svg4everybody": "^2.1.9",
     "svgo": "^1.0.4",
     "transition-group": "^0.0.2",
-    "webpack-flush-chunks": "^1.1.22"
+    "webpack-flush-chunks": "^1.1.22",
+    "workbox-cli": "^2.1.2"
   },
   "devDependencies": {
     "autodll-webpack-plugin": "^0.3.4",
