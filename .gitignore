@@ -66,6 +66,9 @@ buildServer
 
 public/images
 public/dist
+public/favicons
+public/*.js
+public/*.map
 
 # Config
 config/database.js
