@@ -6,7 +6,8 @@
   ],
   
   "plugins": [
-    "universal-import"
+    "universal-import",
+    "lodash"
   ],
   
   "env": {
