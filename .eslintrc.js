@@ -35,6 +35,7 @@ module.exports = {
   globals: {
     window: true,
     document: true,
+    navigator: true,
     __dirname: true,
     __DEV__: true,
     CONFIG: true,
