@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { flushChunkNames } from 'react-universal-component/server';
 import flushChunks from 'webpack-flush-chunks';
+import { forEach } from 'lodash';
 import configureStore from './configureStore';
-import Layout from '../src/06-components/03-layout';
+import Layout from '../src/06-views/01-layout';
 
 const createApp = (App, store) => (
   <Provider store={store}>
@@ -13,7 +14,20 @@ const createApp = (App, store) => (
   </Provider>
 );
 
-export default ({ clientStats, outputPath }) => async (req, res) => {
+const sanitiseCASSHash = (cssHash) => {
+  const isComponent = new RegExp('^00-components');
+  const keys = Object.keys(cssHash);
+
+  forEach(keys, (property) => {
+    if (isComponent.test(property)) {
+      delete cssHash[property]; // eslint-disable-line  no-param-reassign
+    }
+  });
+
+  return cssHash;
+};
+
+export default ({ clientStats }) => async (req, res) => {
   const store = await configureStore(req, res);
   if (!store) return; // no store means redirect was already served
 
@@ -21,11 +35,7 @@ export default ({ clientStats, outputPath }) => async (req, res) => {
   const appString = ReactDOM.renderToString(app);
   const stateJson = JSON.stringify(store.getState());
   const chunkNames = flushChunkNames();
-  const { js, styles, cssHash } = flushChunks(clientStats, { chunkNames });
-
-  console.log('REQUESTED PATH:', req.path); // eslint-disable-line no-console
-  console.log('CHUNK NAMES', chunkNames); // eslint-disable-line no-console
-  console.log('outputPath', outputPath); // eslint-disable-line no-console
+  const { js, styles, cssHashRaw } = flushChunks(clientStats, { chunkNames });
 
   return res.send(`<!doctype html>
     <html lang="lv">
@@ -64,8 +74,8 @@ export default ({ clientStats, outputPath }) => async (req, res) => {
       <body>
         <script>window.REDUX_STATE = ${stateJson}</script>
         <div id="root" class="root">${appString}</div>
-        ${cssHash}
-        <script type='text/javascript' src='/static/vendor.js'></script>
+        <script>window.__CSS_CHUNKS__ = ${JSON.stringify(sanitiseCASSHash(cssHashRaw))}</script>
+        <script src='/static/vendor.js'></script>
         ${js}
       </body>
     </html>`);
