@@ -1,38 +1,99 @@
 import 'babel-polyfill';
 import express from 'express';
 import compression from 'compression';
-import cookieParser from 'cookie-parser';
 import webpack from 'webpack'; // eslint-disable-line import/no-extraneous-dependencies
 import webpackDevMiddleware from 'webpack-dev-middleware'; // eslint-disable-line import/no-extraneous-dependencies
 import webpackHotMiddleware from 'webpack-hot-middleware'; // eslint-disable-line import/no-extraneous-dependencies
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware'; // eslint-disable-line import/no-extraneous-dependencies
 
-import clientConfig from '../webpack/client.dev';
-import serverConfig from '../webpack/server.dev';
+//AUTHENTICATION
+import cookieParser from 'cookie-parser';
+import jwt from 'jsonwebtoken';
+
+const DEV = process.env.NODE_ENV === 'development';
+
+const webpackPath = DEV ? '../webpack/' : '../../webpack/';
+const clientConfig = require(`${webpackPath}client.dev`);
+const serverConfig = require(`${webpackPath}server.dev`);
+
+
 import { findVideos, findVideo } from './api';
 import db from './mysql/mysql';
 
-const DEV = process.env.NODE_ENV === 'development';
 const { publicPath } = clientConfig.output;
 const outputPath = clientConfig.output.path;
 const app = express();
 
 app.use(compression());
-app.use(express.static('public'));
+app.use(express.static('static'));
 
 // JWTOKEN COOKIE - in a real app obviously you set this after signup/login:
 app.use(cookieParser());
 
-app.use((req, res, next) => {
-  const cookie = req.cookies.jwToken;
-  const jwToken = 'real'; // TRY: set to 'real' to authenticate ADMIN route
 
-  if (cookie !== jwToken) {
-    res.cookie('jwToken', jwToken, { maxAge: 900000 });
-    req.cookies.jwToken = jwToken;
+// app.use((req, res, next) => {
+//   const cookie = req.cookies.jwToken;
+//   const user = {
+//     name: "admin",
+//   };
+//   const jwToken = jwt.sign({user: user}, 'viss ir ok', (error, token) => {
+//     console.log('error', error);
+//     console.log('token', token);
+//   });
+//
+//   console.log('cookie', cookie);
+//   console.log('jwToken', jwToken);
+//
+//   if (cookie !== jwToken) {
+//     res.cookie('jwToken', jwToken, { maxAge: 900000 });
+//     req.cookies.jwToken = jwToken;
+//   }
+//
+//   next();
+// });
+
+app.post('/api/login', (req, res) => {
+  const user = {
+    name: 'admin',
+  };
+  jwt.sign({user}, process.env.JWT_SECRET, (error, token) => {
+    console.log('error', error);
+    console.log('token', token);
+    res.json({
+      token
+    })
+  });
+});
+
+
+
+const verifyToken = (req, res, next) => {
+  //Get auth header value
+  const bearerHeader = req.headers['authorization'];
+  //Chech if bearer is undefined
+  if(!!bearerHeader){
+    //Split at the space
+    const bearer = bearerHeader.split(' ');
+    //Set token
+    req.token = bearer[1];
+    //Next midelware
+    next();
+  }else{
+    res.sendStatus(403);
   }
+};
 
-  next();
+app.post('/api/posts', verifyToken, (req, res) => {
+  jwt.verify(req.token, process.env.JWT_SECRET, (error, authData) => {
+    if(error){
+      res.sendStatus(403);
+    }else {
+      res.json({
+        message: 'Post created',
+        authData,
+      })
+    }
+  });
 });
 
 // API
@@ -41,7 +102,6 @@ app.get('/abouttable', (req, res) => {
   const sql = 'CREATE TABLE about(title VARCHAR(255), text TEXT)';
   db.query(sql, (error, result) => {
     if(error) throw error;
-    console.log(result);
     res.send('About table created...');
   });
 });
@@ -58,7 +118,6 @@ app.get('/api/update/about', (req, res) => {
     WHERE id = 1`;
   db.query(sql, (error, result) => {
     if(error) throw error;
-    console.log(result);
     res.send('About changed');
   });
 });
@@ -67,7 +126,6 @@ app.get('/api/get/about', (req, res) => {
   const sql = 'SELECT * FROM about';
   db.query(sql, (error, result) => {
     if(error) throw error;
-    console.log(result);
     res.json(result[0]);
   });
 });
@@ -99,7 +157,7 @@ if (DEV) {
   }));
 } else {
   const clientStats = require('../buildClient/stats.json'); // eslint-disable-line import/no-unresolved, global-require
-  const serverRender = require('../buildServer/main.js').default; // eslint-disable-line import/no-unresolved, global-require
+  const serverRender = require('./main.js').default; // eslint-disable-line import/no-unresolved, global-require
 
   app.use(publicPath, express.static(outputPath));
   app.use(serverRender({ clientStats, outputPath }));
