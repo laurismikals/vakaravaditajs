@@ -62,13 +62,20 @@ typings/
 
 # distribution folders
 buildClient
+static/buildClient
 buildServer
+static/buildServer
 
 public/images
+static/images
 public/dist
+static/dist
 public/favicons
+static/favicons
 public/*.js
+static/*.js
 public/*.map
+static/*.map
 
 # Config
 config/database.js
