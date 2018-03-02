@@ -57,7 +57,6 @@
     "spritesh": "^1.2.0",
     "svg4everybody": "^2.1.9",
     "svgo": "^1.0.5",
-    "sw-precache-webpack-plugin": "^0.11.4",
     "transition-group": "^0.0.2",
     "webpack-flush-chunks": "^1.1.22",
     "workbox-cli": "^2.1.2"
