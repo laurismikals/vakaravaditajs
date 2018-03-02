@@ -2,9 +2,9 @@ const imagemin = require('imagemin') ;   // The imagemin module.
 const webp = require('imagemin-webp');   // imagemin's WebP plugin.
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 
-const outputFolder = './public/images';      // Output folder
-const PNGImages = './public/images/*.png';        // PNG images
-const JPEGImages = './public/images/source/*.jpg';       // JPEG images
+const outputFolder = './static/images';      // Output folder
+const PNGImages = './static/images/*.png';        // PNG images
+const JPEGImages = './static/images/source/*.jpg';       // JPEG images
 
 imagemin([JPEGImages], outputFolder, {
   plugins: [
