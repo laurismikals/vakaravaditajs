@@ -1,8 +1,0 @@
-@import url("../../../00-assets/css/00-settings/colors-base.css");
-.testimonials{
-  float:left;
-  width: 100%;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: var(--c-main--10);
-}

@@ -6,7 +6,7 @@ import AppContainer from 'react-hot-loader/lib/AppContainer'; // eslint-disable-
 
 import Modernizr from './00-assets/js-libs/modernizr-custom'; // eslint-disable-line no-unused-vars
 
-import Layout from './06-components/03-layout';
+import Layout from './06-views/01-layout';
 import configureStore from './configureStore';
 
 const history = createHistory();
@@ -28,9 +28,9 @@ const render = (App) => {
 render(Layout);
 
 if (module.hot && process.env.NODE_ENV === 'development') {
-  module.hot.accept('./06-components/03-layout', () => {
+  module.hot.accept('./06-views/01-layout', () => {
     // eslint-disable-next-line
-    const Layout = require('./06-components/03-layout').default;
+    const Layout = require('./06-views/01-layout').default;
 
     render(Layout);
   });
