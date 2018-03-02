@@ -4,6 +4,9 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const env = require('node-env-file');
+
+env(path.resolve(`${__dirname}/../.env`));
 
 const res = p => path.resolve(__dirname, p);
 
@@ -28,7 +31,7 @@ module.exports = {
   entry: ['babel-polyfill', 'fetch-everywhere', res('../server/render.js')],
   externals,
   output: {
-    path: res('../buildServer'),
+    path: res('../static/buildServer'),
     filename: '[name].js',
     libraryTarget: 'commonjs2',
     publicPath: '/static/',
@@ -72,6 +75,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
+        JWT_SECRET: JSON.stringify(process.env.JWT_SECRET),
       },
     }),
   ],
