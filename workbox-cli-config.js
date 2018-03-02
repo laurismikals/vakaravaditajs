@@ -1,8 +1,8 @@
 module.exports = {
-  globDirectory: "public/",
+  globDirectory: "static/",
   globPatterns: [
     "**/*.{css,html,js,svg,woff2,json,png,jpg,webp}",
   ],
-  swDest: "public/service-worker.js",
-  navigateFallback: '/offline/offline.html',
+  swDest: "static/service-worker.js",
+  navigateFallback: '/',
 };
