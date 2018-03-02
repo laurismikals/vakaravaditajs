@@ -1,8 +1,8 @@
 /* eslint-disable */
-export default (state = 'RFR Demo', action = {}) => {
+export default (state = 'Raivis Bružis - vakara vadītājs', action = {}) => {
   switch (action.type) {
     case 'HOME':
-      return 'RFR Demo';
+      return 'Raivis Bružis - vakara vadītājs';
     case 'LIST':
       return `RFR: ${capitalize(action.payload.category)}`;
     case 'VIDEO':
