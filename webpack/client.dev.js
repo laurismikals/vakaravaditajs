@@ -5,7 +5,6 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 const AutoDllPlugin = require('autodll-webpack-plugin');
 const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const SWPrecachePlugin = require('sw-precache-webpack-plugin');
 
 module.exports = {
   name: 'client',
@@ -95,25 +94,6 @@ module.exports = {
       reportFilename: 'report.html', // look into /dist folder
       openAnalyzer: false,
       generateStatsFile: false,
-    }),
-    new SWPrecachePlugin({
-      cacheId: "vue-webpack-ssr-fully-featured",
-      filename: "service-worker.js",
-      minify: true,
-
-      staticFileGlobs: [
-        "static/**/**.css",
-        "static/**/**.js",
-        "static/images/*"
-      ],
-
-      runtimeCaching: [{
-        urlPattern: /\/.*/,
-        handler: "networkFirst"
-      }],
-
-      dontCacheBustUrlsMatching: /./,
-      navigateFallback: "/"
     }),
   ],
 };
