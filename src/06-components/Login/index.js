@@ -1,5 +1,12 @@
-/* eslint-disable */
-import React from 'react'
-import { login } from './login.css'
+import React from 'react';
 
-export default () => <div className={login}>YOU ARE NOT ALLOWED IN!</div>
+export default () => (
+  <div className="width-100">
+    <div className="width-100 margin-bottom-100" />
+    <div className="container">
+      <form action="">
+        <input type="text" name="name" />
+      </form>
+    </div>
+  </div>
+);
