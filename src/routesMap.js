@@ -8,7 +8,6 @@ export default {
       const fetchAbout = fetch('http://localhost:3000/api/get/about')
         .then(response => response.json())
         .then((response) => {
-          console.log('response', response);
           dispatch({
             type: 'ABOUT_RECEIVED',
             payload: response,
