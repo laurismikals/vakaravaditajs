@@ -1,19 +1,19 @@
 /* eslint-disable */
 export const findVideos = async (category, jwToken) => {
-  await fakeDelay(1000)
-  if (!jwToken) return [] // in a real app, you'd authenticate
+  await fakeDelay(1000);
+  if (!jwToken) return []; // in a real app, you'd authenticate
 
   switch (category) {
     case 'fp':
-      return fpVideos
+      return fpVideos;
     case 'react-redux':
-      return reactReduxVideos
+      return reactReduxVideos;
     case 'db-graphql':
-      return dbGraphqlVideos
+      return dbGraphqlVideos;
     default:
       return []
   }
-}
+};
 
 export const findVideo = async (slug, jwToken) => {
   await fakeDelay(500)
