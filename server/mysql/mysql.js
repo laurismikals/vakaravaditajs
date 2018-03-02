@@ -1,8 +1,11 @@
 import mysql from 'mysql';
 
-import {dbconfig} from '../../config/database';
-
-const db = mysql.createConnection(dbconfig);
+const db = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'vakaravaditajs',
+});
 
 db.connect((error) => {
   if(error){
