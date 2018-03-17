@@ -22,7 +22,7 @@ module.exports = {
     filename: '[name].js',
     chunkFilename: '[name].js',
     path: path.resolve(__dirname, '../static/buildClient'),
-    publicPath: '/static/',
+    publicPath: '/buildClient/',
   },
   module: {
     rules: [

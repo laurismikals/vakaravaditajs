@@ -19,7 +19,7 @@ module.exports = {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, '../static/buildClient'),
-    publicPath: '/static/',
+    publicPath: '/buildClient/',
   },
   module: {
     rules: [
