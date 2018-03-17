@@ -23,7 +23,9 @@
     "svgMakeSprite": "spritesh --input static/dist/icons-min --output static/dist/icons-sprite.svg && rimraf static/dist/icons-min",
     "svg": "npm run svgMinifyIcons && npm run svgMakeSprite",
     "images": "node optimize-images.js",
-    "sw": "workbox generate:sw"
+    "sw:deleteComponents": "node delete-unnecesary-components-from-buildClient.js",
+    "sw:prepareOffline": "node prepare-offline-html.js",
+    "sw:generate": "npm run sw:deleteComponents && npm run sw:prepareOffline && workbox generate:sw"
   },
   "dependencies": {
     "babel-plugin-lodash": "^3.3.2",
@@ -90,6 +92,7 @@
     "jest": "^21.2.1",
     "lint-staged": "^4.2.3",
     "mkdirp": "^0.5.1",
+    "node-dir": "^0.1.17",
     "postcss-cssnext": "^3.1.0",
     "postcss-for": "^2.1.1",
     "postcss-import": "^11.0.0",
