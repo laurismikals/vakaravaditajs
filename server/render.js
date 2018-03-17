@@ -75,7 +75,7 @@ export default ({ clientStats }) => async (req, res) => {
         <script>window.REDUX_STATE = ${stateJson}</script>
         <div id="root" class="root">${appString}</div>
         <script>window.__CSS_CHUNKS__ = ${JSON.stringify(sanitiseCASSHash(cssHashRaw))}</script>
-        <script src='/static/vendor.js'></script>
+        <script src='/buildClient/vendor.js'></script>
         ${js}
       </body>
     </html>`);
