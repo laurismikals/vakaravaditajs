@@ -1,8 +1,15 @@
 module.exports = {
+  cacheId: 'vakaravaditajs',
   globDirectory: "static/",
   globPatterns: [
-    "**/*.{css,html,js,svg,woff2,json,png,jpg,webp}",
+    "buildClient/*.{css,js}",
+    "dist/**.svg",
+    "favicons/*.{png,ico,svg}",
+    "fonts/*.woff2",
+    "images/*.{png,jpg,webp}",
+    "manifest/*.json",
+    "shell/*.html",
   ],
   swDest: "static/service-worker.js",
-  navigateFallback: '/',
+  navigateFallback: '/shell/index.html',
 };
