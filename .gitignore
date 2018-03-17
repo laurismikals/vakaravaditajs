@@ -70,6 +70,7 @@ public/images
 static/images
 public/dist
 static/dist
+static/shell
 public/favicons
 static/favicons
 public/*.js
