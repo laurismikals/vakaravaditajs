@@ -11,14 +11,8 @@ const doesRedirect = ({ kind, pathname }, res) => {
 };
 
 export default async (req, res) => {
-  const { jwToken } = req.cookies; // see server/index.js to change jwToken
-  const preLoadedState = { jwToken }; // onBeforeChange will authenticate using this
-
   const history = createHistory({ initialEntries: [req.path] });
-  const { store, thunk } = configureStore(history, preLoadedState);
-
-  // if not using onBeforeChange + jwTokens, you can also async authenticate
-  // here against your db (i.e. using req.cookies.sessionId)
+  const { store, thunk } = configureStore(history);
 
   const { location } = store.getState();
   if (doesRedirect(location, res)) return false;
