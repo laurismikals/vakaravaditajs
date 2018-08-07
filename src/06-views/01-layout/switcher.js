@@ -1,12 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { TransitionGroup, Transition } from 'transition-group';
-import universal from 'react-universal-component';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import universal from 'react-universal-component';
 
 import Loading from '../00-components/00-atoms/loading/loading';
 import Error from '../Error/index';
-import styles from './switcher.css';
 
 const UniversalComponent = universal(({ page }) => import(`../${page}`), {
   minDelay: 500,
@@ -14,26 +12,14 @@ const UniversalComponent = universal(({ page }) => import(`../${page}`), {
   error: Error,
 });
 
-const Switcher = ({ page, pathname }) => (
-  <TransitionGroup
-    className={`${styles.switcher} next`}
-    duration={500}
-    prefix="fade"
-  >
-    <Transition key={pathname}>
-      <UniversalComponent page={page} />
-    </Transition>
-  </TransitionGroup>
-);
+const Switcher = ({ page }) => <UniversalComponent page={page} />;
 
 Switcher.propTypes = {
   page: PropTypes.string.isRequired,
-  pathname: PropTypes.string.isRequired,
 };
 
-const mapState = ({ page, ...state }) => ({
+const mapState = ({ page }) => ({
   page,
-  pathname: state.location.pathname,
 });
 
 export default connect(mapState)(Switcher);
