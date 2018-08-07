@@ -3,7 +3,6 @@ import reduxThunk from 'redux-thunk';
 import { connectRoutes } from 'redux-first-router';
 
 import routesMap from './routesMap';
-import options from './options';
 import * as reducers from './05-reducers';
 
 export default (history, preLoadedState) => {
@@ -12,7 +11,6 @@ export default (history, preLoadedState) => {
   } = connectRoutes(
     history,
     routesMap,
-    options,
   );
 
   const rootReducer = combineReducers({ ...reducers, location: reducer });
