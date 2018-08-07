@@ -1,26 +1,11 @@
-/*Custom made css grid with 24 columns and 10 breakpoints*/
-/*Dependencies: postcss-for gulp plugin*/
 /*Breakpoints 481-s2, 561-s3, 681-s4, 769-s5, 961-s6, 1025-s7, 1201-s8, 1367-s9, 1601-s10*/
 :global(.row) {
   box-sizing: border-box;
-}
-@supports(flex-wrap: wrap){
-  /*Fix for UC Browser. It doesn't support flex-wrap: wrap, so it falls back to floats.*/
-  :global(.row) {
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-:global(.flexboxtweener .row){
-  /*Adding flexbox for IE11 and IE10 since they don't support @supports syntax.*/
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
 :global(.clear-row),
 :global(.clear-row:before),
 :global(.clear-row:after),
