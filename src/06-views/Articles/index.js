@@ -6,25 +6,25 @@ import CardArticle from '../00-components/01-molecules/card-article/card-article
 
 const articleArr = [
   {
-    href: '/',
+    href: '/article/test',
     image: '/images/head-1',
     title: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
     text: 'Ipsum dolor sit amet, consectetur adipisicing elit. Eius, nesciunt',
   },
   {
-    href: '/',
+    href: '/article/test',
     image: '/images/raivis',
     title: 'Consequuntur dolore doloremque dolores enim eum',
     text: 'Dicta dolore doloribus dolorum et eum ex exercitationem explicabo hic illum in itaque minus necessitatibus nisi perferendis perspiciatis',
   },
   {
-    href: '/',
+    href: '/article/test',
     image: '/images/raivis',
     title: 'Possimus quas tempora velit voluptatem',
     text: 'Dolorum et eum ex exercitationem explicabo hic illum in itaque minus',
   },
   {
-    href: '/',
+    href: '/article/test',
     image: '/images/head-1',
     title: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
     text: 'Assumenda commodi est, ex laboriosam officiis quaerat quidem reprehenderit sed velit voluptas',
@@ -35,6 +35,7 @@ export default () => (
   <div>
     <PageHeader
       className="margin-bottom-50"
+      heading="Raksti"
     />
     <div className="width-100">
       <div className="container container--text">
