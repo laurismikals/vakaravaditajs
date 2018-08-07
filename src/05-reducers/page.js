@@ -1,15 +1,12 @@
-/* eslint-disable */
 import { NOT_FOUND } from 'redux-first-router';
-
-export default (state = 'HOME', action = {}) => components[action.type] || state;
 
 const components = {
   HOME: 'Home',
   GALLERY: 'Gallery',
   ARTICLES: 'Articles',
-  LIST: 'List',
-  VIDEO: 'Video',
-  ADMIN: 'Admin',
-  LOGIN: 'Login',
-  [NOT_FOUND]: 'NotFound'
+  ARTICLE: 'Article',
+  CONTACTS: 'Contacts',
+  [NOT_FOUND]: 'NotFound',
 };
+
+export default (state = 'HOME', action = {}) => components[action.type] || state;
