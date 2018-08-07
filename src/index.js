@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 import createHistory from 'history/createBrowserHistory';
 import AppContainer from 'react-hot-loader/lib/AppContainer'; // eslint-disable-line import/no-extraneous-dependencies
 
-import Modernizr from './00-assets/js-libs/modernizr-custom'; // eslint-disable-line no-unused-vars
-
 import Layout from './06-views/01-layout';
 import configureStore from './configureStore';
 
