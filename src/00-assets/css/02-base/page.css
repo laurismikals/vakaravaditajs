@@ -17,6 +17,8 @@ body{
 }
 main {
   flex: 1 0 auto; /* Presses footer to the bottom of the page */
+  display: flex;
+  flex-direction: column;
 }
 :global(.root){
   width: 100%;
