@@ -5,7 +5,7 @@ import Image from '../../00-atoms/image/image';
 
 import styles from './page-header.css';
 
-const PageHeader = ({ className }) => (
+const PageHeader = ({ className, heading }) => (
   <header className={`${styles.pageHeader} ${!className ? '' : className}`}>
     <Image
       src="/images/head-1"
@@ -16,7 +16,7 @@ const PageHeader = ({ className }) => (
     <div className={styles.content}>
       <div className="container">
         <h1 className={styles.heading}>
-          Raksti
+          {heading}
         </h1>
       </div>
     </div>
@@ -25,9 +25,11 @@ const PageHeader = ({ className }) => (
 
 PageHeader.propTypes = {
   className: PropTypes.string,
+  heading: PropTypes.string,
 };
 PageHeader.defaultProps = {
   className: '',
+  heading: '',
 };
 
 export default PageHeader;
