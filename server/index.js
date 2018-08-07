@@ -6,12 +6,6 @@ import webpackDevMiddleware from 'webpack-dev-middleware'; // eslint-disable-lin
 import webpackHotMiddleware from 'webpack-hot-middleware'; // eslint-disable-line import/no-extraneous-dependencies
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware'; // eslint-disable-line import/no-extraneous-dependencies
 
-// Authentication
-import cookieParser from 'cookie-parser';
-import bodyParser from 'body-parser';
-import multer from 'multer';
-import session from 'express-session';
-
 const DEV = process.env.NODE_ENV === 'development';
 
 // WebPack config
@@ -23,29 +17,13 @@ const { publicPath } = clientConfig.output;
 const outputPath = clientConfig.output.path;
 const app = express();
 
-// BodyParser middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-
-// Multer
-const upload = multer();
-
 // Compression
 app.use(compression());
 
 // Static folder
 app.use(express.static('static'));
 
-// Express session
-app.use(session({
-  secret: process.env.AUTHENTICATION_SECRET,
-  saveUninitialized: true,
-  resave: true,
-}));
-
 // UNIVERSAL HMR + STATS HANDLING GOODNESS:
-
 if (DEV) {
   const multiCompiler = webpack([clientConfig, serverConfig]);
   const clientCompiler = multiCompiler.compilers[0];
