@@ -16,15 +16,15 @@ const HeaderMain = () => (
         </NavLink>
         <NavLink
           activeClassName={styles.active}
-          to="/gallery"
-        >
-          Galerija
-        </NavLink>
-        <NavLink
-          activeClassName={styles.active}
           to="/articles"
         >
           Raksti
+        </NavLink>
+        <NavLink
+          activeClassName={styles.active}
+          to="/contacts"
+        >
+          Kontakti
         </NavLink>
       </div>
     </div>
