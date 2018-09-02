@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { map } from 'lodash';
 
 import PageHeader from '../00-components/01-molecules/page-header/page-header';
@@ -32,7 +32,7 @@ const articleArr = [
 ];
 
 export default () => (
-  <div>
+  <Fragment>
     <PageHeader
       className="margin-bottom-50"
       heading="Raksti"
@@ -56,5 +56,5 @@ export default () => (
         ))}
       </div>
     </div>
-  </div>
+  </Fragment>
 );
