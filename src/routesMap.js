@@ -4,7 +4,7 @@ export default {
     thunk: async () => {},
   },
   GALLERY: {
-    path: '/gallery',
+    path: '/gallery/:id?',
     thunk: async () => {},
   },
   ARTICLES: {
