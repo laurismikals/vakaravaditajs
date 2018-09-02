@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import PageHeader from '../00-components/01-molecules/page-header/page-header';
 
 import textStyles from '../00-components/00-atoms/text/text.css';
 
 export default () => (
-  <div>
+  <Fragment>
     <PageHeader
       className="margin-bottom-50"
       heading="Lorem ipsum dolor sit amet."
@@ -29,5 +29,5 @@ export default () => (
         </blockquote>
       </div>
     </div>
-  </div>
+  </Fragment>
 );
