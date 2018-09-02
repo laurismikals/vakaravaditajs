@@ -31,6 +31,7 @@ module.exports = {
         ignoreTemplateLiterals: true
       }
     ],
+    'react/prefer-stateless-function': [false],
   },
   globals: {
     window: true,
