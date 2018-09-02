@@ -22,6 +22,12 @@ const HeaderMain = () => (
         </NavLink>
         <NavLink
           activeClassName={styles.active}
+          to="/gallery"
+        >
+          Galerija
+        </NavLink>
+        <NavLink
+          activeClassName={styles.active}
           to="/contacts"
         >
           Kontakti
