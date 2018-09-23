@@ -40,6 +40,7 @@
     "react-dom": "^16.4.2",
     "react-lazy-load": "^3.0.13",
     "react-redux": "^5.0.5",
+    "react-style-proptype": "^3.2.2",
     "react-universal-component": "^2.5.0",
     "redux": "^3.7.0",
     "redux-devtools-extension": "^2.13.2",
