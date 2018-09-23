@@ -33,13 +33,16 @@ class Gallery extends PureComponent {
   static propTypes = {
     id: PropTypes.number,
   };
+  static defaultProps = {
+    id: null,
+  };
 
   render() {
     const { id } = this.props;
 
     return (
       <Fragment>
-        {id}
+        {id && id}
         <PageHeader
           className="margin-bottom-50"
           heading="Galerija"
