@@ -4,9 +4,6 @@
 const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
-const env = require('node-env-file');
-
-env(path.resolve(`${__dirname}/../.env`));
 
 const res = p => path.resolve(__dirname, p);
 
@@ -74,7 +71,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
-        JWT_SECRET: JSON.stringify(process.env.JWT_SECRET),
       },
     }),
   ],
