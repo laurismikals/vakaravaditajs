@@ -32,6 +32,7 @@ module.exports = {
       }
     ],
     'react/prefer-stateless-function': [false],
+    'import/prefer-default-export': [false],
   },
   globals: {
     window: true,
