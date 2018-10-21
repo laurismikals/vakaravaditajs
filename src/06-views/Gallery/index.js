@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import PageHeader from '../00-components/01-molecules/page-header/page-header';
 import CardGallery from '../00-components/01-molecules/card-gallery/card-gallery';
+import { Gallery } from '../00-components/01-molecules/gallery/gallery';
 
 const galleryArr = [
   {
@@ -29,7 +30,7 @@ const galleryArr = [
   },
 ];
 
-class Gallery extends PureComponent {
+class GalleryView extends PureComponent {
   static propTypes = {
     id: PropTypes.number,
   };
@@ -42,7 +43,7 @@ class Gallery extends PureComponent {
 
     return (
       <Fragment>
-        {id && id}
+        {id && <Gallery id={id} galleryArr={galleryArr} />}
         <PageHeader
           className="margin-bottom-50"
           heading="Galerija"
@@ -78,4 +79,4 @@ const mapState = ({ location: { payload: { id } } }) => ({
   id,
 });
 
-export default connect(mapState)(Gallery);
+export default connect(mapState)(GalleryView);
