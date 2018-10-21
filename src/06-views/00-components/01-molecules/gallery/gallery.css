@@ -1,9 +1,54 @@
+@import url("../../../../00-assets/css/00-settings/colors-base.css");
+
 .root {
   position: fixed;
+  z-index: 999;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--c-main--70);
+  display: block;
+  visibility: hidden;
+  opacity: 0;
 }
-
-.image {
-  width: 600px;
+.container {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 1025px){
+  .container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+.close{
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  color: var(--c-main);
+  font-size: 30px;
+}
+@media only screen and (min-width: 1141px){
+  .close{
+    color: var(--c-white);
+  }
+}
+.content{
+  opacity: 0;
+  visibility: hidden;
+}
+body.state-dialog-opened {
+  overflow-y: hidden;
+  position: fixed;
+}
+html.state-dialog-opened {
+  position: fixed;
 }
