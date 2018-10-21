@@ -32,10 +32,14 @@ const galleryArr = [
 
 class GalleryView extends PureComponent {
   static propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.bool,
+    ]),
   };
+
   static defaultProps = {
-    id: null,
+    id: false,
   };
 
   render() {
@@ -43,7 +47,11 @@ class GalleryView extends PureComponent {
 
     return (
       <Fragment>
-        {id && <Gallery id={id} galleryArr={galleryArr} />}
+        <Gallery
+          id={id}
+          open={typeof id !== 'undefined' && id !== false}
+          galleryArr={galleryArr}
+        />
         <PageHeader
           className="margin-bottom-50"
           heading="Galerija"

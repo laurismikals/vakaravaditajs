@@ -8,14 +8,14 @@ import styles from './contact.css';
 
 const Contact = ({ image }) => (
   <section className={styles.contact}>
-    {image &&
+    {image && (
       <Image
         src="/images/raivis-2"
         alt="Vakara vadītājs Raivis Bružis"
         cover
         className={styles.image}
       />
-    }
+    )}
     <div className={styles.container}>
       <div className="container">
         <h2 className={`${styles.heading} ${headingStyles.primary} margin-bottom-40 text-align--center`}>

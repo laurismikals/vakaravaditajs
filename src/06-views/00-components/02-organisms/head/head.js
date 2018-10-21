@@ -15,12 +15,13 @@ export default () => (
     <div className={styles.textWrap}>
       <div className="container">
         <h1 className={styles.text}>
-          <span className={styles.profession}>Vakara vadītājs</span><br />
-          <span className={styles.name}>Raivis</span><br />
+          <span className={styles.profession}>Vakara vadītājs</span>
+          <br />
+          <span className={styles.name}>Raivis</span>
+          <br />
           <span className={styles.surname}>Bružis</span>
         </h1>
       </div>
     </div>
   </section>
 );
-

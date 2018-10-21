@@ -11,18 +11,23 @@ export default class Image extends Component {
       loaded: false,
     };
   }
+
   componentWillReceiveProps(nextProps) {
-    if (this.props.src !== nextProps.src) {
+    const { src } = this.props;
+    if (src !== nextProps.src) {
       this.setState({
         loaded: false,
       });
     }
   }
+
   loadHandler() {
+    const { loaded } = this.state;
     this.setState({
-      loaded: !this.state.loaded,
+      loaded: !loaded,
     });
   }
+
   render() {
     const {
       className = '',
@@ -32,13 +37,14 @@ export default class Image extends Component {
       alt,
       cover = false,
     } = this.props;
+    const { loaded } = this.state;
     return (
       <figure
         className={`
           ${className}
           ${styles.image}
           ${x && y ? styles.imageAspect : ''}
-          ${this.state.loaded ? styles.imageLoaded : styles.imageLoading}
+          ${loaded ? styles.imageLoaded : styles.imageLoading}
           ${cover ? 'image--cover' : ''}
         `}
         style={(x && y) && { padding: `0 0 ${(y * 100) / x}% 0` }}

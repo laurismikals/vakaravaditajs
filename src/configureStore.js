@@ -1,4 +1,9 @@
-import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
+import {
+  createStore,
+  applyMiddleware,
+  compose,
+  combineReducers,
+} from 'redux';
 import reduxThunk from 'redux-thunk';
 import { connectRoutes } from 'redux-first-router';
 

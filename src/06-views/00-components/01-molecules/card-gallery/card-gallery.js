@@ -13,6 +13,7 @@ class CardGallery extends PureComponent {
     title: PropTypes.string.isRequired,
     className: PropTypes.string,
   };
+
   static defaultProps = {
     className: '',
   };
