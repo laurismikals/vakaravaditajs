@@ -33,6 +33,7 @@ module.exports = {
     ],
     'react/prefer-stateless-function': [false],
     'import/prefer-default-export': [false],
+    'react/destructuring-assignment': [true, { 'ignoreClassFields': true }]
   },
   globals: {
     window: true,
