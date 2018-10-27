@@ -9,3 +9,10 @@
   justify-content: space-between;
   align-items: center;
 }
+a.link,
+a.link:hover,
+a.link:focus,
+a.link:active {
+  color: var(--c-main);
+  text-decoration: none;
+}

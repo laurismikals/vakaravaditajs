@@ -10,7 +10,14 @@ export default () => (
     <div className="container">
       <div className={styles.inner}>
         <div className={textStyles.text}>
-          <p>&copy; Raivis Bružis visas tiesības aizsargātas</p>
+          <p>
+            <a
+              className={styles.link}
+              href="tel:+37128266845"
+            >
+              +371 28266845
+            </a>
+          </p>
         </div>
         <NavSocial />
       </div>
