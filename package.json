@@ -39,7 +39,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-lazy-load": "^3.0.13",
-    "react-portal": "^4.1.5",
+    "react-portal-minimal": "^4.0.2",
     "react-redux": "^5.0.5",
     "react-style-proptype": "^3.2.2",
     "react-universal-component": "^2.5.0",
