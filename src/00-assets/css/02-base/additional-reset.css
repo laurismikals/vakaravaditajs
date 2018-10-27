@@ -24,3 +24,21 @@ ol, ul {
   padding-left: 0;
   margin-bottom: 0;
 }
+dialog {
+  display: block;
+  position: relative;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  color: currentColor;
+  margin: auto;
+  border-width: 0;
+  border-style: solid;
+  border-color: #000000;
+  padding: 0;
+  background: transparent;
+}
+dialog:not([open]) {
+  display: none;
+}
