@@ -1,6 +1,9 @@
 module.exports = {
   parser: 'babel-eslint',
   extends: 'airbnb',
+  plugins: [
+    'react-hooks'
+  ],
   rules: {
     'func-names': ['error', 'never'],
     'jsx-a11y/label-has-for': [
@@ -33,7 +36,8 @@ module.exports = {
     ],
     'react/prefer-stateless-function': [false],
     'import/prefer-default-export': [false],
-    'react/destructuring-assignment': [true, { 'ignoreClassFields': true }]
+    'react/destructuring-assignment': [true, { 'ignoreClassFields': true }],
+    'react-hooks/rules-of-hooks': 'error'
   },
   globals: {
     window: true,
