@@ -13,8 +13,7 @@ export default class Image extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { src } = this.props;
-    if (src !== nextProps.src) {
+    if (this.props.src !== nextProps.src) {
       this.setState({
         loaded: false,
       });
