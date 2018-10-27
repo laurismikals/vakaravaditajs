@@ -42,3 +42,4 @@ dialog {
 dialog:not([open]) {
   display: none;
 }
+*:focus:not(:focus-visible) { outline: none }
