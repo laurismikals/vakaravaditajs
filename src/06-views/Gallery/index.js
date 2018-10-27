@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { map } from 'lodash';
 import { connect } from 'react-redux';
@@ -20,68 +20,67 @@ const galleryArr = [
   },
   {
     href: '/gallery/2',
-    image: '/images/raivis',
+    image: '/images/head-1',
     title: 'Possimus quas tempora velit voluptatem',
   },
   {
     href: '/gallery/3',
-    image: '/images/head-1',
+    image: '/images/raivis',
     title: 'Lorem ipsum dolor sit amet, consectetur adipisicing',
   },
 ];
 
-class GalleryView extends PureComponent {
-  static propTypes = {
-    id: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.bool,
-    ]),
-  };
-
-  static defaultProps = {
-    id: false,
-  };
-
-  render() {
-    const { id } = this.props;
-
-    return (
-      <Fragment>
+const GalleryView = ({ id }) => {
+  const open = typeof id !== 'undefined' && id !== false;
+  return (
+    <Fragment>
+      {open && (
         <Gallery
           id={id}
-          open={typeof id !== 'undefined' && id !== false}
+          open={open}
           galleryArr={galleryArr}
         />
-        <PageHeader
-          className="margin-bottom-50"
-          heading="Galerija"
-        />
-        <div className="container">
-          <div className="width-100 margin-bottom-30">
-            <div className="row row--gutters-20">
-              {galleryArr && map(galleryArr, ({
-                href,
-                image,
-                title,
-                text,
-              }, i) => (
-                <div key={i} className="col-s1-24 col-s3-12 col-s5-8 col-s6-6">
-                  <CardGallery
-                    className="margin-bottom-20"
-                    href={href}
-                    image={image}
-                    title={title}
-                    text={text}
-                  />
-                </div>
-              ))}
-            </div>
+      )}
+      <PageHeader
+        className="margin-bottom-50"
+        heading="Galerija"
+      />
+      <div className="container">
+        <div className="width-100 margin-bottom-30">
+          <div className="row row--gutters-20">
+            {galleryArr && map(galleryArr, ({
+              href,
+              image,
+              title,
+              text,
+            }, i) => (
+              <div key={i} className="col-s1-24 col-s3-12 col-s5-8 col-s6-6">
+                <CardGallery
+                  className="margin-bottom-20"
+                  href={href}
+                  image={image}
+                  title={title}
+                  text={text}
+                />
+              </div>
+            ))}
           </div>
         </div>
-      </Fragment>
-    );
-  }
-}
+      </div>
+    </Fragment>
+  );
+};
+
+GalleryView.propTypes = {
+  id: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.bool,
+  ]),
+};
+
+GalleryView.defaultProps = {
+  id: false,
+};
 
 const mapState = ({ location: { payload: { id } } }) => ({
   id,
